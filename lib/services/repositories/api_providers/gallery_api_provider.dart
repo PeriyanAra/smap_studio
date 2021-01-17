@@ -13,7 +13,9 @@ class GalleryApiProvider {
       List<Post> postsList = [];
 
       for (var singlePostJson in json.decode(response.body)['posts']) {
-        if (singlePostJson['id'] != null) {
+        if (
+          singlePostJson['id'] != null
+        ) {
           postsList.add(
             Post.fromApiJson(singlePostJson)
           );

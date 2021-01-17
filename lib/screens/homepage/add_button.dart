@@ -27,17 +27,18 @@ class _AddButtonState extends State<AddButton> {
   _getFromGallery() async {
     PickedFile pickedFile = await ImagePicker().getImage(
       source: ImageSource.gallery,
-      maxWidth: 1800,
-      maxHeight: 1800,
+      maxWidth: 3080,
+      maxHeight: 3080,
     );
+    
     _cropImage(pickedFile.path);
   }
 
   _cropImage(filePath) async {
     File croppedImage = await ImageCropper.cropImage(
       sourcePath: filePath,
-      maxWidth: 1080,
-      maxHeight: 1080,
+      maxWidth: 3080,
+      maxHeight: 3080,
     );
 
     if (croppedImage  != null) {
